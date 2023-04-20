@@ -8,14 +8,15 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 ------------------------------------------------------------------------------------------------ */
 
+
 const raisedToTheThird = (arr) => {
-  const raisedToTheThird = (arr) => {
-    const result = [];
-    arr.forEach(num => {
-      result.push(Math.pow(num, 3));
-    });
-    return result;
-  };
+  const result = [];
+  arr.forEach(num => {
+    result.push(Math.pow(num, 3));
+  });
+  return result;
+};
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,13 +65,15 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  const forEachTwoToThe = (arr) => {
-    const result5 = [];
-    arr.forEach(num => {
-      result5.push(Math.pow(2, num));
-    });
-    return result5;
-  };
+  const result5 = [];
+  arr.forEach(num => {
+    result5.push(Math.pow(2, num));
+  });
+  return result5;
+};
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -80,7 +83,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   return arr.map(num => Math.pow(2, num));
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -91,10 +94,14 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
-
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map((letter) => letter.charCodeAt(0));
 };
+
+console.log(charCode(['h', 'i'])); // Output: [104, 105]
+console.log(charCode(['a', 'b', 'c'])); // Output: [97, 98, 99]
+console.log(charCode(['A', 'B', 'C'])); // Output: [65, 66, 67]
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -105,10 +112,13 @@ If any element in the array is not a number, the resulting array should have the
 
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
-
 const evenOdd = (arr) => {
-  // Solution code here...
+  return arr.map((num) => {
+    return typeof num !== 'number' ? 'N/A' : num % 2 === 0 ? 'even' : 'odd';
+  });
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -151,10 +161,14 @@ const snorlaxAbilities = {
   name: 'snorlax',
   weight: 4600,
 };
-
 const extractAbilities = (arr) => {
-  // Solution code here...
+  return arr.map((ability) => ability.ability.name);
 };
+
+console.log(extractAbilities(snorlaxAbilities.abilities));
+// Output: ["gluttony", "cute charm", "immunity"]
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -198,10 +212,13 @@ const snorlaxStats = {
   name: 'snorlax',
   weight: 4600,
 };
-
 const extractStats = (arr) => {
-  // Solution code here...
+  return arr.map((stat) => ({
+    name: stat.stat.name,
+    total: stat.effort + stat.baseStat,
+  }));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
