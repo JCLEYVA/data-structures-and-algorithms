@@ -115,8 +115,16 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
-const createList = (availableItems) => {
-  
+const createList = (inventory) => {
+  const groceryList = [];
+
+  inventory.forEach(item => {
+    if (item.available) {
+      groceryList.push(item.name);
+    }
+  });
+
+  return groceryList;
 };
 
 
@@ -133,24 +141,30 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
-
 const fizzbuzz = (arr) => {
   const output = [];
 
   arr.forEach((num) => {
     if (num % 3 === 0 && num % 5 === 0) {
-      output.push("Fizz Buzz");
+      output.push('Fizz Buzz');
     } else if (num % 3 === 0) {
-      output.push("Fizz");
+      output.push('Fizz');
     } else if (num % 5 === 0) {
-      output.push("Buzz");
+      output.push('Buzz');
     } else {
       output.push(num);
     }
   });
 
   return output;
-}
+};
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const result = fizzbuzz(arr);
+console.log(result);
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
