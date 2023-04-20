@@ -226,14 +226,6 @@ Do not use the vertical bar (pipe) character.
 
 Hint: All of these words end with the letters "ells".
 ------------------------------------------------------------------------------------------------ */
-const findShells = (str) => {
-  const regex = /s\w*ells/gi;
-  return str.match(regex);
-};
-
-console.log(findShells(seashells));
-
-
 
 
 /* ------------------------------------------------------------------------------------------------
