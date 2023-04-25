@@ -17,11 +17,14 @@ Becomes:
 <li>age: 32</li>
 ]
 ------------------------------------------------------------------------------------------------ */
-function transformToLis(obj) {
-  const items = Object.entries(obj).map(([key, value]) => `<li>${key}: ${value}</li>`);
-  return items.join('');
-}
 
+function transformToLis(obj){
+  const items = [];
+  for (const [key, value] of Object.entries(obj)) {
+    items.push(`<li>${key}: ${value}</li>`);
+  }
+  return items;
+}
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -165,7 +168,7 @@ let findShortest = (data) => {
     let currentHeight = parseInt(currentCharacter.height);
     let shortestHeight = parseInt(currentShortest.height);
 
-    
+
     return currentHeight < shortestHeight ? currentCharacter : currentShortest;
   });
 
